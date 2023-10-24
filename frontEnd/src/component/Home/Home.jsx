@@ -11,11 +11,11 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <div className="row border">
-          <div className="col-md-6">
+        <div className="row ">
+          <div className="col-md-6 border">
             <img src={home} alt="Home Picture" className="imgHome mx-4" />
           </div>
-          <div className="col-md-6 d-flex align-self-center flex-column">
+          <div className="col-md-6 d-flex align-self-center flex-column px-5">
             <h1 className="title">Start Build Your Resmue</h1>
             <button onClick={handleSubmit} type="button" className="btn">
               Let's Start

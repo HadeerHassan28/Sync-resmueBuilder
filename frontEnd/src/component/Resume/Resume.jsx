@@ -1,9 +1,21 @@
 import React from "react";
 import styles from "./Resume.module.css";
+import AddInfo from "../AddInfo/AddInfo";
+import DisplayInfo from "../DisplayInfo/DispkayInfo";
+
 const Resume = () => {
   return (
     <>
-      <h2>Resume</h2>
+      <div className="container">
+        <div className="row imgHome">
+          <div className="col-md-6 border">
+            <AddInfo />
+          </div>
+          <div className="col-md-6 border">
+            <DisplayInfo />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
