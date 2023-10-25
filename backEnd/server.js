@@ -1,16 +1,46 @@
+const PORT = 5001;
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 
-app.use(bodyParser.json());
+const generatePDF = require("./pdfGenerator");
+const puppeteer = require("puppeteer");
+
 app.use(cors());
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+//! get:
+app.get("/template.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "template.js"));
+  console.log(req);
+});
+//!Post:
+app.post("/generatePdf", async (req, res) => {
+  try {
+    const { htmlContent } = req.body;
+    const browser = await puppeteer.launch({ headless: "new" });
+    const page = await browser.newPage();
+    await page.setContent(htmlContent);
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    const pdfBuffer = await page.pdf({ format: "A4" });
+
+    await browser.close();
+
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=generated-pdf.pdf"
+    );
+    res.setHeader("Content-Type", "application/pdf");
+    res.send(pdfBuffer);
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
-app.post("/generateResume", (req, res) => {
-  // Handle resume generation logic here
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

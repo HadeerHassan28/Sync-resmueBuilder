@@ -8,10 +8,10 @@ const Layout = () => {
     <>
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
-        <div className="container py-5">
+        <div className="m-3 ">
           <Outlet />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
