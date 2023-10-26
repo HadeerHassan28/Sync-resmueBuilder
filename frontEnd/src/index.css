@@ -19,7 +19,7 @@ body {
   background-repeat: repeat;
   background-position: center;
   position: relative;
-  min-height: 100vh;
+  height: 100vh !important;
 }
 .bg-nav {
   background-color: var(--main-color) !important;
@@ -50,8 +50,7 @@ body {
   border-radius: 30px;
 }
 .imgHome {
-  /* background-color: #f1f1f1; */
-  background-color: #000000;
+  background-color: #f1f1f1;
 }
 @media (max-width: 1000px) {
   .navbar-toggler-icon {

@@ -4,7 +4,7 @@ import { MDBFooter, MDBContainer } from "mdb-react-ui-kit";
 export default function App() {
   return (
     <MDBFooter
-      className="text-center text-white"
+      className="text-center text-white "
       style={{
         backgroundColor: "#21081a",
         position: "fixed",
@@ -12,10 +12,10 @@ export default function App() {
         width: "100%",
       }}
     >
-      <MDBContainer className="p-1"></MDBContainer>
+      <MDBContainer></MDBContainer>
 
       <div
-        className="text-center p-3"
+        className="text-center pt-1"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
         © 2023 Copyright:

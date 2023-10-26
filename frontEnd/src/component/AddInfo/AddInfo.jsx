@@ -1,37 +1,66 @@
 import React, { useState, useEffect } from "react";
 import styles from "./AddInfo.module.css";
-import axios from "axios";
+import Education from "../Education/Education";
+import Exepericnes from "../Exepericnes/Exepericnes";
+import PersonalData from "../PersonalData/PersonalData";
+import Projects from "../Projects/Projects";
+import Extra from "../Extra/Extra";
+
 const AddInfo = () => {
-  const [htmlContent, sethtmlContent] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    skills: "",
 
-  //!get:
+    exp1_org: "",
+    exp1_pos: "",
+    exp1_desc: "",
+    exp1_dur: "",
+    exp2_org: "",
+    exp2_pos: "",
+    exp2_desc: "",
+    exp2_dur: "",
 
-  //!Post:
-  // const fetchHtmlContect = async () => {
-  //   try {
-  //     const response = await axios.get("http://127.0.0.1:5001/template.js");
-  //     console.log(response);
-  //     if (response.status === 200) sethtmlContent(response.data);
-  //     else console.log("Error Fetching");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  //!post:
-  const generatePDF = () => {
-    try {
-      const response = axios.post("/generatePdf", {
-        htmlContent: htmlContent,
-      });
-      if (response.data === 200) console.log("done");
-      else console.log("error");
-    } catch (error) {
-      console.log(error);
+    proj1_title: "",
+    proj1_link: "",
+    proj1_desc: "",
+    proj2_title: "",
+    proj2_link: "",
+    proj2_desc: "",
+
+    edu1_school: "",
+    edu1_year: "",
+    edu1_qualification: "",
+    edu1_desc: "",
+    edu2_school: "",
+    edu2_year: "",
+    edu2_qualification: "",
+    edu2_desc: "",
+
+    extra_1: "",
+    extra_2: "",
+  });
+  const [page, setpage] = useState(0);
+  const FormTitle = [
+    "Personal Details",
+    "Education",
+    "Exepericnes",
+    "Projects",
+    "Extra",
+  ];
+  const pageDisplay = () => {
+    switch (page) {
+      case 0: return <PersonalData /> 
+      case 1: return <Education/>
+      case 2: return <Exepericnes /> 
+case 3: return      
     }
+  }
+  
   };
-  // useEffect(() => {
-  //   fetchHtmlContect();
-  // }, []);
   return (
     <>
       <h2>test</h2>

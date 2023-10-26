@@ -44,6 +44,7 @@ const DisplayInfo = () => {
     <>
       <div className="container">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+
         <button onClick={generatePDF} className="btn">
           Download
         </button>

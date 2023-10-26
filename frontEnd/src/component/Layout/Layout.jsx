@@ -6,12 +6,13 @@ import Footer from "../Footer/Footer";
 const Layout = () => {
   return (
     <>
-      <div className="d-flex flex-column min-vh-100">
+      <div className="d-flex flex-column ">
         <NavBar />
         <div className="m-3 ">
           <Outlet />
         </div>
-        {/* <Footer /> */}
+
+        <Footer />
       </div>
     </>
   );
