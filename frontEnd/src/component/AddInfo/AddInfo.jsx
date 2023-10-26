@@ -52,18 +52,37 @@ const AddInfo = () => {
     "Extra",
   ];
   const pageDisplay = () => {
-    switch (page) {
-      case 0: return <PersonalData /> 
-      case 1: return <Education/>
-      case 2: return <Exepericnes /> 
-case 3: return      
-    }
-  }
-  
+    if (page === 0) return <PersonalData />;
+    else if (page === 1) return <Education />;
+    else if (page === 2) return <Exepericnes />;
+    else if (page === 3) return <Projects />;
+    else return <Extra />;
   };
+
   return (
     <>
-      <h2>test</h2>
+      <div>
+        <h2>{FormTitle[page]}</h2>
+        <div>{pageDisplay()}</div>
+        <button
+          onClick={(cureentPage) => {
+            setpage(cureentPage - 1);
+          }}
+          disabled={page === 0}
+          className="btn"
+        >
+          Prev
+        </button>
+        <button
+          onClick={(cureentPage) => {
+            setpage(cureentPage + 1);
+          }}
+          disabled={page === 4}
+          className="btn"
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 };
