@@ -11,6 +11,7 @@ const AddInfo = () => {
     name: "",
     email: "",
     phone: "",
+    address: "",
     linkedin: "",
     github: "",
     skills: "",
@@ -43,45 +44,62 @@ const AddInfo = () => {
     extra_1: "",
     extra_2: "",
   });
-  const [page, setpage] = useState(0);
-  const FormTitle = [
-    "Personal Details",
-    "Education",
-    "Exepericnes",
-    "Projects",
-    "Extra",
-  ];
-  const pageDisplay = () => {
-    if (page === 0) return <PersonalData />;
-    else if (page === 1) return <Education />;
-    else if (page === 2) return <Exepericnes />;
-    else if (page === 3) return <Projects />;
-    else return <Extra />;
-  };
+  // const [page, setpage] = useState(0);
+  // const FormTitle = [
+  //   "Personal Details",
+  //   "Education",
+  //   "Exepericnes",
+  //   "Projects",
+  //   "Extra",
+  // ];
+  // const pageDisplay = () => {
+  //   if (page === 0)
+  //     return <PersonalData formData={formData} setFormData={setFormData} />;
+  //   else if (page === 1)
+  //     return <Education formData={formData} setFormData={setFormData} />;
+  //   else if (page === 2)
+  //     return <Exepericnes formData={formData} setFormData={setFormData} />;
+  //   else if (page === 3)
+  //     return <Projects formData={formData} setFormData={setFormData} />;
+  //   else return <Extra formData={formData} setFormData={setFormData} />;
+  // };
 
   return (
     <>
-      <div>
-        <h2>{FormTitle[page]}</h2>
-        <div>{pageDisplay()}</div>
-        <button
-          onClick={(cureentPage) => {
-            setpage(cureentPage - 1);
-          }}
-          disabled={page === 0}
-          className="btn"
-        >
-          Prev
-        </button>
-        <button
-          onClick={(cureentPage) => {
-            setpage(cureentPage + 1);
-          }}
-          disabled={page === 4}
-          className="btn"
-        >
-          Next
-        </button>
+      {/* <div className="container ">
+        <h2 className="h2 title ">{FormTitle[page]}</h2>
+        <div className="px-5">{pageDisplay()}</div>
+        <div className="mt-2">
+          <button
+            onClick={() => {
+              setpage(page - 1);
+            }}
+            disabled={page === 0}
+            className="btn p-2"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            onClick={() => {
+              setpage(page + 1);
+            }}
+            disabled={page === 4}
+            className="btn p-2"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div> */}
+      <div className="container">
+        <PersonalData formData={formData} setFormData={setFormData} />
+        <hr className="hr" />
+        <Education formData={formData} setFormData={setFormData} />
+        <hr />
+        <Exepericnes formData={formData} setFormData={setFormData} />
+        <hr />
+        <Projects formData={formData} setFormData={setFormData} />
+        <hr />
+        <Extra formData={formData} setFormData={setFormData} />
       </div>
     </>
   );

@@ -57,3 +57,7 @@ body {
     background-color: var(--text-color);
   }
 }
+.hr {
+  color: var(--light-color);
+  width: 2px;
+}

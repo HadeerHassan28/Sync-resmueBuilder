@@ -2,6 +2,7 @@ module.exports = ({
   name,
   email,
   phone,
+  address,
   linkedin,
   github,
   skills,
@@ -69,7 +70,8 @@ module.exports = ({
                 <div class="col-lg-6">
                     <h1><b>${name}</b></h1>
                     <p class="lead email"><strong>Email:</strong> ${email}</p>
-                    <p class="lead"><strong>Contact:</strong> (+92)${phone}</p>
+                    <p class="lead"><strong>Contact:</strong> (+20)${phone}</p>
+                     <p class="lead"><strong>Address:</strong> ${address}</p>
                     <p class="lead"><strong>LinkedIn:</strong> ${linkedin}</p>
                     <p class="lead"><strong>Github:</strong> ${github}</p>
                 </div>    
@@ -107,9 +109,7 @@ module.exports = ({
             <div class="col-lg-8 mx-auto">
                   <p class="lead"><b>${proj2_title}</b> (${proj2_link})</p>
                   <p class="mt-0">${proj2_desc}</p>
-            </div>
-    
-    
+            </div
             <div class="col-lg-8 mx-auto bg-light">
                   <h3><b>Education</b></h3>
             </div>

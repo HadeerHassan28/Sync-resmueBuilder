@@ -10,7 +10,7 @@ const Home = () => {
   };
   return (
     <>
-      <div className="container m-5 ps-5">
+      <div className="container m-5 ps-5 pb-5">
         <div className="row ">
           <div className="col-md-6 border">
             <img src={home} alt="Home Picture" className="imgHome mx-4" />

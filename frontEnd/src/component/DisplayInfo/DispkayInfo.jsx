@@ -42,7 +42,7 @@ const DisplayInfo = () => {
   }, []);
   return (
     <>
-      <div className="container">
+      <div className="container mb-5">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
         <button onClick={generatePDF} className="btn">

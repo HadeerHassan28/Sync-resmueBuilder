@@ -7,7 +7,7 @@ export default function App() {
       className="text-center text-white "
       style={{
         backgroundColor: "#21081a",
-        position: "fixed",
+
         bottom: 0,
         width: "100%",
       }}

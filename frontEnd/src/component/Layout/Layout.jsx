@@ -8,9 +8,8 @@ const Layout = () => {
     <>
       <div className="d-flex flex-column ">
         <NavBar />
-        <div className="m-3 ">
-          <Outlet />
-        </div>
+
+        <Outlet />
 
         <Footer />
       </div>
