@@ -13,7 +13,7 @@ const PersonalData = ({ formData, setFormData }) => {
       <form className="row g-3 imgHome">
         <h4 className="title mb-1">Personal Details</h4>
         {/* name */}
-        <div className="col-md-6">
+        <div className="col-md-4 ">
           <label htmlFor="name" className="form-label">
             Name:
           </label>
@@ -29,7 +29,7 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
         {/* email */}
-        <div className="col-md-6">
+        <div className="col-md-4">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -45,7 +45,7 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
         {/* phone */}
-        <div className="col-md-6">
+        <div className="col-md-4">
           <label htmlFor="phone" className="form-label">
             Phone
           </label>

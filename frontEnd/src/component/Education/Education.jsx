@@ -20,7 +20,7 @@ const Education = ({ formData, setFormData }) => {
       <form className="row g-3 imgHome">
         <h4 className="title mb-1">Education</h4>
         {/* edu1_qualification */}
-        <div className="col-md-6">
+        <div className="col-md-6 mt-1">
           <label htmlFor="edu1_qualification" className="form-label">
             Degree
           </label>
@@ -36,7 +36,7 @@ const Education = ({ formData, setFormData }) => {
           />
         </div>
         {/* edu1_year */}
-        <div className="col-md-6">
+        <div className="col-md-6 mt-1">
           <label htmlFor="edu1_year" className="form-label">
             Year
           </label>
@@ -91,7 +91,6 @@ const Education = ({ formData, setFormData }) => {
           </button>
         </div>
 
-        <hr />
         {showSecDregee ? (
           <>
             {/* 2nd Degree */}
