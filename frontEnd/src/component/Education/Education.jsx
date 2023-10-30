@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Education.module.css";
 const Education = ({ formData, setFormData }) => {
-  // edu1_school: "",
+  const [showSecDregee, setshowSecDregee] = useState(false);
+  const addSecDegreeFiled = (e) => {
+    e.preventDefault();
+    setshowSecDregee(true);
+  };
+  //   edu1_school: "",
   //   edu1_year: "",
   //   edu1_qualification: "",
   //   edu1_desc: "",
+  //////////////////////
   //   edu2_school: "",
   //   edu2_year: "",
   //   edu2_qualification: "",
@@ -13,42 +19,10 @@ const Education = ({ formData, setFormData }) => {
     <>
       <form className="row g-3 imgHome">
         <h4 className="title mb-1">Education</h4>
-        {/* edu1_school*/}
-        <div className="col-md-6">
-          <label for="edu1_school" className="form-label">
-            Enter the University Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="edu1_school"
-            name="edu1_school"
-            value={formData.edu1_school}
-            onChange={(e) => {
-              setFormData({ ...formData, edu1_school: e.target.value });
-            }}
-          />
-        </div>
-        {/* edu1_year */}
-        <div className="col-md-6">
-          <label for="edu1_year" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="edu1_year"
-            name="edu1_year"
-            value={formData.edu1_year}
-            onChange={(e) => {
-              setFormData({ ...formData, edu1_year: e.target.value });
-            }}
-          />
-        </div>
         {/* edu1_qualification */}
         <div className="col-md-6">
-          <label for="edu1_qualification" className="form-label">
-            Qualification
+          <label htmlFor="edu1_qualification" className="form-label">
+            Degree
           </label>
           <input
             type="text"
@@ -61,72 +35,137 @@ const Education = ({ formData, setFormData }) => {
             }}
           />
         </div>
-        {/* address */}
-        <div className="col-12">
-          <label for="inputAddress" className="form-label">
-            Address
+        {/* edu1_year */}
+        <div className="col-md-6">
+          <label htmlFor="edu1_year" className="form-label">
+            Year
           </label>
           <input
             type="text"
             className="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-            value={formData.address}
+            id="edu1_year"
+            name="edu1_year"
+            value={formData.edu1_year}
             onChange={(e) => {
-              setFormData({ ...formData, address: e.target.value });
+              setFormData({ ...formData, edu1_year: e.target.value });
             }}
           />
         </div>
+
+        {/* school */}
         <div className="col-12">
-          <label for="github" className="form-label">
-            <i class="fa-brands fa-github me-2"></i>
-            GitHub
+          <label htmlFor="edu1_school" className="form-label">
+            University
           </label>
           <input
             type="text"
             className="form-control"
-            id="github"
-            name="github"
-            placeholder="https://github/username"
-            value={formData.github}
+            id="edu1_school"
+            value={formData.edu1_school}
             onChange={(e) => {
-              setFormData({ ...formData, github: e.target.value });
+              setFormData({ ...formData, edu1_school: e.target.value });
             }}
           />
         </div>
         <div className="col-12">
-          <label for="linkedin" className="form-label">
-            <i class="fa-brands fa-linkedin me-2"></i>
-            LinkedIn
+          <label htmlFor="edu1_desc" className="form-label">
+            Describtion
           </label>
           <input
             type="text"
             className="form-control"
-            id="linkedin"
-            name="linkedin"
-            placeholder="https://linkedin/username"
-            value={formData.linkedin}
+            id="edu1_desc"
+            name="edu1_desc"
+            value={formData.edu1_desc}
             onChange={(e) => {
-              setFormData({ ...formData, linkedin: e.target.value });
+              setFormData({ ...formData, edu1_desc: e.target.value });
             }}
           />
         </div>
-        <div className="col-12">
-          <label for="skills" className="form-label">
-            Skills
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="skills"
-            name="skills"
-            placeholder="Enter your Skills seperating by , "
-            value={formData.skills}
-            onChange={(e) => {
-              setFormData({ ...formData, skills: e.target.value });
-            }}
-          />
+
+        {/* To add Second */}
+        <div className="d-flex justify-content-center ">
+          <button onClick={addSecDegreeFiled} className="btn px-4 py-1">
+            {" "}
+            <i className="fa-solid fa-circle-plus"></i>
+          </button>
         </div>
+
+        <hr />
+        {showSecDregee ? (
+          <>
+            {/* 2nd Degree */}
+            {/* edu2_qualification */}
+            <h6 className="title">
+              <u>2nd Degree</u>
+            </h6>
+            <div className="col-md-6">
+              <label htmlFor="edu2_qualification" className="form-label">
+                Degree
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="edu2_qualification"
+                name="edu2_qualification"
+                value={formData.edu2_qualification}
+                onChange={(e) => {
+                  setFormData({
+                    ...formData,
+                    edu2_qualification: e.target.value,
+                  });
+                }}
+              />
+            </div>
+            {/* edu2_year */}
+            <div className="col-md-6">
+              <label htmlFor="edu2_year" className="form-label">
+                Year
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="edu2_year"
+                name="edu2_year"
+                value={formData.edu2_year}
+                onChange={(e) => {
+                  setFormData({ ...formData, edu2_year: e.target.value });
+                }}
+              />
+            </div>
+
+            {/* school */}
+            <div className="col-12">
+              <label htmlFor="edu2_school" className="form-label">
+                University
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="edu2_school"
+                value={formData.edu2_school}
+                onChange={(e) => {
+                  setFormData({ ...formData, edu2_school: e.target.value });
+                }}
+              />
+            </div>
+            <div className="col-12">
+              <label htmlFor="edu2_desc" className="form-label">
+                Describtion
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="edu2_desc"
+                name="edu2_desc"
+                value={formData.edu2_desc}
+                onChange={(e) => {
+                  setFormData({ ...formData, edu2_desc: e.target.value });
+                }}
+              />
+            </div>
+          </>
+        ) : null}
       </form>
     </>
   );

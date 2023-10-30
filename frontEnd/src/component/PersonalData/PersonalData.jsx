@@ -14,7 +14,7 @@ const PersonalData = ({ formData, setFormData }) => {
         <h4 className="title mb-1">Personal Details</h4>
         {/* name */}
         <div className="col-md-6">
-          <label for="name" className="form-label">
+          <label htmlFor="name" className="form-label">
             Name:
           </label>
           <input
@@ -30,7 +30,7 @@ const PersonalData = ({ formData, setFormData }) => {
         </div>
         {/* email */}
         <div className="col-md-6">
-          <label for="email" className="form-label">
+          <label htmlFor="email" className="form-label">
             Email
           </label>
           <input
@@ -46,7 +46,7 @@ const PersonalData = ({ formData, setFormData }) => {
         </div>
         {/* phone */}
         <div className="col-md-6">
-          <label for="phone" className="form-label">
+          <label htmlFor="phone" className="form-label">
             Phone
           </label>
           <input
@@ -62,7 +62,7 @@ const PersonalData = ({ formData, setFormData }) => {
         </div>
         {/* address */}
         <div className="col-12">
-          <label for="inputAddress" className="form-label">
+          <label htmlFor="inputAddress" className="form-label">
             Address
           </label>
           <input
@@ -77,8 +77,8 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
         <div className="col-12">
-          <label for="github" className="form-label">
-            <i class="fa-brands fa-github me-2"></i>
+          <label htmlFor="github" className="form-label">
+            <i className="fa-brands fa-github me-2"></i>
             GitHub
           </label>
           <input
@@ -94,8 +94,8 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
         <div className="col-12">
-          <label for="linkedin" className="form-label">
-            <i class="fa-brands fa-linkedin me-2"></i>
+          <label htmlFor="linkedin" className="htmlForm-label">
+            <i className="fa-brands fa-linkedin me-2"></i>
             LinkedIn
           </label>
           <input
@@ -111,7 +111,7 @@ const PersonalData = ({ formData, setFormData }) => {
           />
         </div>
         <div className="col-12">
-          <label for="skills" className="form-label">
+          <label htmlFor="skills" className="form-label">
             Skills
           </label>
           <input
