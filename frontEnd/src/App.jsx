@@ -5,6 +5,7 @@ import Home from "./component/Home/Home";
 import Layout from "./component/Layout/Layout";
 import Resume from "./component/Resume/Resume";
 import NotFound from "./component/NotFound/NotFound";
+import FormDataContextProvider from "./Context/FormDataContext";
 function App() {
   let routes = createBrowserRouter([
     {
@@ -25,9 +26,11 @@ function App() {
   ]);
   return (
     <>
-      <RouterProvider router={routes}>
-        <Layout />
-      </RouterProvider>
+      <FormDataContextProvider>
+        <RouterProvider router={routes}>
+          <Layout />
+        </RouterProvider>
+      </FormDataContextProvider>
     </>
   );
 }

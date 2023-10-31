@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Projects.module.css";
-const Projects = ({ formData, setFormData }) => {
+import { formDataContext } from "../../Context/FormDataContext";
+const Projects = () => {
+  const { formData, setFormData } = useContext(formDataContext);
   const [showSecProject, setshowSecProject] = useState(false);
   const addSecProjectFiled = (e) => {
     e.preventDefault();

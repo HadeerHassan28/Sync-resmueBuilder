@@ -7,6 +7,7 @@ const path = require("path");
 
 const generatePDF = require("./pdfGenerator");
 const puppeteer = require("puppeteer");
+const { log } = require("console");
 
 app.use(cors());
 app.use(bodyParser.json());

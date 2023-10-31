@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Education.module.css";
-const Education = ({ formData, setFormData }) => {
+import { formDataContext } from "../../Context/FormDataContext";
+const Education = () => {
+  const { formData, setFormData } = useContext(formDataContext);
   const [showSecDregee, setshowSecDregee] = useState(false);
   const addSecDegreeFiled = (e) => {
     e.preventDefault();

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Exepericnes.module.css";
-
-const Exepericnes = ({ formData, setFormData }) => {
+import { formDataContext } from "../../Context/FormDataContext";
+const Exepericnes = () => {
+  const { formData, setFormData } = useContext(formDataContext);
   const [showSecExp, setshowSecExp] = useState(false);
   const addSecExpFiled = (e) => {
     e.preventDefault();

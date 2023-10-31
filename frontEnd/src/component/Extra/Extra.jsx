@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Extra.module.css";
-const Extra = ({ formData, setFormData }) => {
+import { formDataContext } from "../../Context/FormDataContext";
+const Extra = () => {
   // extra_1: "",
   //   extra_2: "",
-
+  const { formData, setFormData } = useContext(formDataContext);
   return (
     <>
       <form className="row g-3 imgHome">

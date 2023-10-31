@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./PersonalData.module.css";
-const PersonalData = ({ formData, setFormData }) => {
+import { formDataContext } from "../../Context/FormDataContext";
+const PersonalData = () => {
+  const { formData, setFormData } = useContext(formDataContext);
   //  name: "",
   //   email: "",
   //   phone: "",
-  //   address: "",
+  //   c: "",
   //   linkedin: "",
   //   github: "",
   //   skills: "",
   return (
     <>
-      <form className="row g-3 imgHome">
+      <form className="row g-3 imgHome mt-3">
         <h4 className="title mb-1">Personal Details</h4>
         {/* name */}
         <div className="col-md-4 ">
@@ -76,23 +78,7 @@ const PersonalData = ({ formData, setFormData }) => {
             }}
           />
         </div>
-        <div className="col-12">
-          <label htmlFor="github" className="form-label">
-            <i className="fa-brands fa-github me-2"></i>
-            GitHub
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="github"
-            name="github"
-            placeholder="https://github/username"
-            value={formData.github}
-            onChange={(e) => {
-              setFormData({ ...formData, github: e.target.value });
-            }}
-          />
-        </div>
+
         <div className="col-12">
           <label htmlFor="linkedin" className="htmlForm-label">
             <i className="fa-brands fa-linkedin me-2"></i>
@@ -107,6 +93,23 @@ const PersonalData = ({ formData, setFormData }) => {
             value={formData.linkedin}
             onChange={(e) => {
               setFormData({ ...formData, linkedin: e.target.value });
+            }}
+          />
+        </div>
+        <div className="col-12">
+          <label htmlFor="github" className="form-label">
+            <i className="fa-brands fa-github me-2"></i>
+            GitHub
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="github"
+            name="github"
+            placeholder="https://github/username"
+            value={formData.github}
+            onChange={(e) => {
+              setFormData({ ...formData, github: e.target.value });
             }}
           />
         </div>
