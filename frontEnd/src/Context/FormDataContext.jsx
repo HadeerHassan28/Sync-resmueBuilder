@@ -41,12 +41,13 @@ const FormDataContextProvider = ({ children }) => {
     extra_2: "",
   });
   //!Post to generate PDF:
-  const generatePDF = async () => {
+  const generatePDF = async ({ formData, htmlContent }) => {
     try {
       const response = await axios.post("http://127.0.0.1:5001/generatePdf", {
         formData: formData,
+        htmlContent: htmlContent,
       });
-      console.log(response);
+      console.log(response.data);
       if (response.status === 200) {
         // localStorage.setItem("formData", JSON.stringify(formData));
         const blob = new Blob([response.data], { type: "application/pdf" });

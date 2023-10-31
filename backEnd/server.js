@@ -21,7 +21,7 @@ app.get("/template.js", (req, res) => {
 //!Post:
 app.post("/generatePdf", async (req, res) => {
   try {
-    const { htmlContent } = req.body;
+    const { formData, htmlContent } = req.body;
     const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
     await page.setContent(htmlContent);
