@@ -8,10 +8,13 @@ import Extra from "../Extra/Extra";
 import { formDataContext } from "../../Context/FormDataContext";
 
 const AddInfo = () => {
-  const { generatePDF, formData, setFormData } = useContext(formDataContext);
+  const { generatePDF, formData } = useContext(formDataContext);
   const Pdf = async () => {
-    const htmlContent = document.querySelector(".container").innerHTML;
-    await generatePDF(formData, htmlContent);
+    const container = document.querySelector(".container");
+    const htmlContent = container.innerHTML; //returen the correct html
+    // console.log(htmlContent); //Done
+    // console.log(formData); //Done
+    await generatePDF({ formData: formData, htmlContent: htmlContent });
   };
   const hanldeSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +24,7 @@ const AddInfo = () => {
       <div className="container">
         <form className="row g-3 imgHome mt-3" onSubmit={hanldeSubmit}>
           <PersonalData />
-          <hr className="hr" />
+          <hr />
           <Exepericnes />
           <hr />
           <Projects />
@@ -29,7 +32,7 @@ const AddInfo = () => {
           <Education />
           <hr />
           <Extra />
-          <button onClick={Pdf} className="btn my-5">
+          <button onClick={Pdf} className="btn my-5 pdf-content-loaded">
             Download
           </button>
         </form>

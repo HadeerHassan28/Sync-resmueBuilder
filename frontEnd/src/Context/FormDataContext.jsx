@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import axios from "axios";
+
 export const formDataContext = createContext();
 
 const FormDataContextProvider = ({ children }) => {
@@ -42,15 +43,25 @@ const FormDataContextProvider = ({ children }) => {
   });
   //!Post to generate PDF:
   const generatePDF = async ({ formData, htmlContent }) => {
+    console.log("formData:", formData);
+    console.log("htmlContent:", htmlContent);
     try {
-      const response = await axios.post("http://127.0.0.1:5001/generatePdf", {
-        formData: formData,
-        htmlContent: htmlContent,
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:5001/generatePdf",
+        {
+          formData: formData,
+          htmlContent: htmlContent,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log(response.data);
       if (response.status === 200) {
-        // localStorage.setItem("formData", JSON.stringify(formData));
-        const blob = new Blob([response.data], { type: "application/pdf" });
+        const pdfBuffer = response.data;
+        const blob = new Blob([pdfBuffer], { type: "application/pdf" });
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
